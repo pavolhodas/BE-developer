@@ -5,7 +5,13 @@ public class Warior {
     private int life;
     private int speed;
     private int muscle;
-    Item[] items = new Item[]{};
+
+    public Warior(String name, int life, int speed, int muscle) {
+        this.name = name;
+        this.life = life;
+        this.speed = speed;
+        this.muscle = muscle;
+    }
 
     @Override
     public String toString() {
@@ -13,29 +19,26 @@ public class Warior {
                 "name='" + name + '\'' +
                 ", life=" + life +
                 ", speed=" + speed +
-                ", muscle=" + muscle +
-                ", items=" + Arrays.toString(items) +
+                ", muscle=" + muscle+
                 '}';
     }
 
     public static void warOfWariors(){
-        Warior warior01 = new Warior();
-        warior01.name="Warior1";
-        warior01.life=9;
-        warior01.speed=5;
-        warior01.muscle=7;
+        Warior warior01 = new Warior("Warior1", 9, 5, 7);
 
-        Warior warior02 = new Warior();
-        warior02.name="Warior2";
-        warior02.life=6;
-        warior02.speed=9;
-        warior02.muscle=8;
+        Warior warior02 = new Warior("Warior2", 6, 9, 8);
 
+        int totalForceWarior01 =warior01.life+ warior01.speed+warior01.muscle;
+        int totalForceWarior02 = warior02.life+ warior02.speed+warior02.muscle;
+        if(totalForceWarior01<totalForceWarior02){
+
+        }
         Item items01 = new Item("compass", 54);
         Item items02 = new Item("gold fish", 100);
         Item items03 = new Item("watchs", 30);
 
-        System.out.println(warior01.name +",  "+ warior01.life+",  "+ warior01.speed+",  "+warior01.muscle+",  "+ items01);
-        System.out.println(warior02.name +",  "+ warior02.life+",  "+ warior02.speed+",  "+warior02.muscle+",  "+items02.name+",  "+items02.value+",  "+items03.name+",  "+items03.value);
+        System.out.println(warior01+",  "+ items01);
+        System.out.println(warior02+",  "+items02+",  "+items03);
+
     }
 }
