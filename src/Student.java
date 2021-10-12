@@ -4,22 +4,6 @@ public class Student {
     private int studentPhoneNumber;
     private String studentAddress;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getStudentNumber() {
-        return studentNumber;
-    }
-
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
-    }
-
     public int getStudentPhoneNumber() {
         return studentPhoneNumber;
     }
@@ -34,6 +18,22 @@ public class Student {
 
     public void setStudentAddress(String studentAddress) {
         this.studentAddress = studentAddress;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStudentNumber(int studentNumber) {
+        this.studentNumber = studentNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getStudentNumber() {
+        return studentNumber;
     }
 
     public static void main(String[] args) {

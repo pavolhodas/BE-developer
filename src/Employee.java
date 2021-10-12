@@ -23,10 +23,11 @@ public class Employee {
     public static void getEmployee(){
     Date date = new Date("4.7.1990");
     JobPosition jobPosition = new JobPosition("IT programmer", 2100);
-
     Employee employee01 = new Employee("Jozko", "Mrkvicka", jobPosition, date);
 
     System.out.println(employee01 );
 }
-
+    public static void main(String[] args) {
+        getEmployee();
+    }
 }
