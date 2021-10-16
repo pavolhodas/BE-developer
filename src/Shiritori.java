@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Shiritori {
     public ArrayList<String> words;
@@ -26,7 +29,12 @@ public class Shiritori {
         shiritori.words.add(words03);
         shiritori.words.add(words04);
 
-        if(play(shiritori.words, correctWords)) {
+        if(words01.equals("")||words02.equals("")||words03.equals("")||words04.equals("")){
+            System.out.println("words were deleted");
+            gameOver = true;
+            return true;
+        }
+        else if(play(shiritori.words, correctWords)) {
             System.out.println( correctWords.words + " = correct");
         }
         else{
@@ -42,14 +50,9 @@ public class Shiritori {
             gameOver = false;
             return false;
         }
-        final String validChars = "0123456789+-*/()[]{}";
+
         for (int i = 1; i < words.size(); i++) {
-            for(int a = 0; a < words.get(i-1).length()-1; a++) {
-                if(!validChars.contains(words.get(i-1).charAt(a))) {
-                    System.out.println("invalid string, try again: ");
-                }
-            }
-            if (words.get(i-1).charAt(words.get(i-1).length() - 1) == words.get(i).charAt(0) && words.get(i-1) != words.get(i)) {
+            if (words.get(i-1).toLowerCase().charAt(words.get(i-1).length() - 1) == words.get(i).toLowerCase().charAt(0) && !words.get(i - 1).toLowerCase().equals(words.get(i).toLowerCase())&&words.get(i-1).matches("[a-zA-Z]+")&&words.get(i).matches("[a-zA-Z]+")) {
                 correctWords.words.add(words.get(i-1));
             }
 
@@ -65,7 +68,6 @@ public class Shiritori {
     private static boolean restart()
     {
         runGame("", "", "", "");
-        System.out.println("words were deleted");
 
         return false;
     }
@@ -73,21 +75,17 @@ public class Shiritori {
     private static String getWords(){
         Shiritori shiritori = new Shiritori();
 
-        String words01 = new String("halo");
-        String words02 = new String("ozaj");
-        String words03 = new String("jez");
-        String words04 = new String("oskvarky");
 
-        shiritori.words.add(words01);
-        shiritori.words.add(words02);
-        shiritori.words.add(words03);
-        shiritori.words.add(words04);
+        shiritori.words.add("palo");
+        shiritori.words.add("ovca");
+        shiritori.words.add("adam");
+        shiritori.words.add("madam");
 
         return String.valueOf(shiritori);
     }
         public static void main (String[]args){
-            runGame("Palo", "ovca", "anglicky", "ypsilon");
-
+            //restart();
+            runGame("palo", "OvcA", "adam", "Madam");
             System.out.println(getWords());
         }
 
