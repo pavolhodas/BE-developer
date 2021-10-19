@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.stream.IntStream;
+
 public class Person {
     private  String name;
     private int age;
@@ -18,22 +21,24 @@ public class Person {
                 '}';
     }
 
-    public static int getBudgetOfPerson(){
+    public static int getBudget(ArrayList<Person> person){
+        ArrayList<Integer> budget = new ArrayList<>();
 
-        Person person01 = new Person("John", 21, 23000);
-        Person person02 = new Person("Steve", 32, 40000);
-        Person person03 = new Person("Martin", 16, 2700);
-
-        Person person[]=new Person[3];
-        person[0]= person01;
-        person[1]= person02;
-        person[2]= person03;
-
-        System.out.println(person[0]+", "+person[1]+", "+person[2]);
-        return person[0].budget+person[1].budget+person[2].budget;
+        int sum = 0;
+        for(int i=0; i<person.size();i++){
+            budget.add(person.get(i).budget);
+            sum += budget.get(i);
+        }
+        return sum;
     }
 
     public static void main(String[] args) {
-        System.out.println("Person budget together: "+getBudgetOfPerson());
+        ArrayList<Person> person = new ArrayList<>();
+
+        person.add(new Person("John", 21, 23000));
+        person.add(new Person("Steve", 32, 40000));
+        person.add(new Person("Martin", 16, 2700));
+
+        System.out.println(getBudget(person));
     }
 }

@@ -28,6 +28,10 @@ public class Warrior {
     }
 
     public static void warOfWariors(Warrior warrior01, Warrior warrior02){
+
+
+
+
         //create items
         Item items01 = new Item("compass", 54);
         Item items02 = new Item("gold fish", 100);
