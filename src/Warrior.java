@@ -34,10 +34,10 @@ public class Warrior {
     }
 
     private Item removeHighestItem() {
-        Item itemForCompare=items.get(0);
+        Item itemForCompare = items.get(0);
         for (int i = 0; i < items.size(); i++) {
-            if(items.get(i).value>itemForCompare.value){
-                itemForCompare=items.get(i);
+            if (items.get(i).value > itemForCompare.value) {
+                itemForCompare = items.get(i);
             }
         }
         items.remove(itemForCompare);
@@ -49,7 +49,7 @@ public class Warrior {
         //create a list which help to move items
         ArrayList<Item> removedItem = new ArrayList<Item>();
 
-        if(warrior01.getTotalForce() == 0 && warrior02.getTotalForce() == 0){
+        if (warrior01.getTotalForce() == 0 && warrior02.getTotalForce() == 0) {
 
         }
         //if warrior02 is the winner
@@ -66,8 +66,7 @@ public class Warrior {
         } else if (warrior01.getTotalForce() > warrior02.getTotalForce()) {
             if (warrior02.items.size() == 0) {
                 System.out.println("No one item to move");
-            }
-            else {
+            } else {
                 warrior01.items.add(warrior02.removeHighestItem());
             }
 

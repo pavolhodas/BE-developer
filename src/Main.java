@@ -11,6 +11,6 @@ public class Main {
         Warrior warrior1 = new Warrior("Warrior1", 9, 5, 7, Arrays.asList(items01, items03, items02));
         Warrior warrior2 = new Warrior("Warrior2", 9, 9, 8, Arrays.asList(items01, items03, items02));
 
-        Warrior.warrior01.warOfWariors(warrior1, warrior2);
+        //Warrior.warrior01.warOfWariors(warrior1, warrior2);
     }
 }

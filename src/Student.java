@@ -50,7 +50,7 @@ public class Student {
         student02.setStudentPhoneNumber(456789);
         student02.setStudentAddress("Legionarska 2, 01001 Zilina");
 
-        System.out.println(student01.getName()+": "+ student01.getStudentNumber()+", " + student01.getStudentPhoneNumber() + ", " + student01.getStudentAddress());
-        System.out.println(student02.getName()+": "+ student02.getStudentNumber()+", " + student02.getStudentPhoneNumber() + ", " + student02.getStudentAddress());
+        System.out.println(student01.getName() + ": " + student01.getStudentNumber() + ", " + student01.getStudentPhoneNumber() + ", " + student01.getStudentAddress());
+        System.out.println(student02.getName() + ": " + student02.getStudentNumber() + ", " + student02.getStudentPhoneNumber() + ", " + student02.getStudentAddress());
     }
 }

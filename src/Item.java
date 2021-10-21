@@ -1,6 +1,7 @@
 public class Item {
     private String name;
-    public int value;;
+    public int value;
+    ;
 
     public Item(String name, int value) {
         this.name = name;

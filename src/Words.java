@@ -7,6 +7,6 @@ public class Words {
 
     @Override
     public String toString() {
-        return  Name + '\'';
+        return Name + '\'';
     }
 }

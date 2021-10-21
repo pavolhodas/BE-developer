@@ -9,15 +9,16 @@ public class Triangle {
         this.sideC = sideC;
     }
 
-    public int getArea(Triangle triangle){
-        return sideA*sideB/2;
+    public int getArea(Triangle triangle) {
+        return sideA * sideB / 2;
     }
 
-    public int getPerimeter(Triangle triangle){
-        return sideA+sideB+sideC;
+    public int getPerimeter(Triangle triangle) {
+        return sideA + sideB + sideC;
     }
+
     public static void main(String[] args) {
-        Triangle triangle01 = new Triangle(6,4,4);
+        Triangle triangle01 = new Triangle(6, 4, 4);
         System.out.println(triangle01.getArea(triangle01));
         System.out.println(triangle01.getPerimeter(triangle01));
     }

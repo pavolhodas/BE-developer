@@ -22,13 +22,12 @@ public class Shiritori {
                 '}';
     }
 
-    private boolean runGame(List<String> wordsToPlay){
+    private boolean runGame(List<String> wordsToPlay) {
 
         for (int i = 0; i < wordsToPlay.size(); i++) {
-            if(play(wordsToPlay.get(i))){
+            if (play(wordsToPlay.get(i))) {
                 alreadySaidWords.add(wordsToPlay.get(i));
-            }
-            else{
+            } else {
                 System.out.println("Game over");
                 return false;
             }
@@ -39,31 +38,31 @@ public class Shiritori {
 
     private boolean play(String word) {
 
-            if(!word.matches("[a-zA-Z]+")||gameOver) return false;
+        if (!word.matches("[a-zA-Z]+") || gameOver) return false;
 
-            else if (alreadySaidWords.isEmpty()||alreadySaidWords.get(alreadySaidWords.size() - 1).toLowerCase().charAt(alreadySaidWords.get(alreadySaidWords.size()-1).toLowerCase().length()-1) == word.toLowerCase().charAt(0) && !alreadySaidWords.get(alreadySaidWords.size() - 1).equals(word))
-                return true;
+        else if (alreadySaidWords.isEmpty() || alreadySaidWords.get(alreadySaidWords.size() - 1).toLowerCase().charAt(alreadySaidWords.get(alreadySaidWords.size() - 1).toLowerCase().length() - 1) == word.toLowerCase().charAt(0) && !alreadySaidWords.get(alreadySaidWords.size() - 1).equals(word))
+            return true;
 
-            else return false;
+        else return false;
     }
 
-    private  boolean restart()
-    {
+    private boolean restart() {
         alreadySaidWords.clear();
         return false;
     }
 
-    private boolean getWords(){
+    private boolean getWords() {
         System.out.println(alreadySaidWords);
         return false;
     }
-        public static void main (String[]args){
-            Shiritori shiritori = new Shiritori();
 
-            shiritori.runGame(Arrays.asList("palo", "ovca", "Adam", "Madam"));
-            shiritori.restart();
-            shiritori.getWords();
+    public static void main(String[] args) {
+        Shiritori shiritori = new Shiritori();
 
-        }
+        shiritori.runGame(Arrays.asList("palo", "ovca", "Adam", "Madam"));
+        shiritori.restart();
+        shiritori.getWords();
+
+    }
 
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class Person {
-    private  String name;
+    private String name;
     private int age;
     private int budget;
 
@@ -21,11 +21,11 @@ public class Person {
                 '}';
     }
 
-    public static int getBudget(ArrayList<Person> person){
+    public static int getBudget(ArrayList<Person> person) {
         ArrayList<Integer> budget = new ArrayList<>();
 
         int sum = 0;
-        for(int i=0; i<person.size();i++){
+        for (int i = 0; i < person.size(); i++) {
             budget.add(person.get(i).budget);
             sum += budget.get(i);
         }
