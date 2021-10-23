@@ -93,7 +93,7 @@ public class Warrior {
 
         //create two warriors
         Warrior warrior01 = new Warrior("Warrior1", 9, 5, 7, warrior1Items);
-        Warrior warrior02 = new Warrior("Warrior2", 9, 9, 8, warrior2Items);
+        Warrior warrior02 = new Warrior("Warrior2", 1, 9, 8, warrior2Items);
 
         Warrior.warOfWariors(warrior01, warrior02);
 
