@@ -26,8 +26,6 @@ public class Employee {
     }
 
     public static void getEmployee(Employee employee01) {
-
-
         System.out.println(employee01);
     }
 

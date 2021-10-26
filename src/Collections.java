@@ -5,20 +5,21 @@ import java.util.List;
 public class Collections {
     //1. exercise
     public static void getIntegersLambada(List<Integer> integers) {
+        List<Integer> listOfNums = new ArrayList<>();
 
-
-        integers.forEach(i -> System.out.println(i));
+        integers.forEach(i -> listOfNums.add(i));
         if (integers.isEmpty()) System.out.println("List je prazdny");
 
-        else System.out.println(integers);
+        else System.out.println(listOfNums);
     }
     //1. exercise
     public static void getIntegersReference(List<Integer> integers) {
+        List<Integer> listOfNums = new ArrayList<>();
 
-        integers.forEach(System.out::println);
+        integers.forEach(listOfNums::add);
         if (integers.isEmpty()) System.out.println("List je prazdny");
 
-        else System.out.println(integers);
+        else System.out.println(listOfNums);
     }
     //2. exercise
     private static void addIfNotExists(List<Integer> integers, int newItem){
@@ -47,6 +48,14 @@ public class Collections {
         integers.stream().filter(i -> i % 2 == 0).forEach(listOfNums::add);
         System.out.println(listOfNums);
     }
+
+    //5. exercise
+    public static void multiplyByLength(List<Integer> integers){
+        List<Integer> listOfNums = new ArrayList<>();
+
+        integers.stream().map(i-> i* integers.size()).forEach(listOfNums::add);
+        System.out.println(listOfNums);
+    }
     public static void main(String[] args) {
 
         System.out.println("Lambda function:");
@@ -63,5 +72,8 @@ public class Collections {
 
         System.out.println("Add if it is odd:");
         addIfOdd(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ));
+
+        System.out.println("Multiply by length:");
+        multiplyByLength(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ));
     }
 }
