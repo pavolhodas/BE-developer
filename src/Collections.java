@@ -35,8 +35,9 @@ public class Collections {
     //3. exercise
     public static void clearIfOdd(List<Integer> integers){
         List<Integer> listOfNums = new ArrayList<>();
+        integers.forEach(listOfNums::add);
 
-        integers.stream().filter(i -> i % 2 == 0).forEach(listOfNums::add);;
+        integers.stream().filter(i -> i % 2 == 0).forEach(listOfNums::remove);
         System.out.println(listOfNums);
     }
     public static void main(String[] args) {
