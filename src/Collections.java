@@ -40,6 +40,13 @@ public class Collections {
         integers.stream().filter(i -> i % 2 == 0).forEach(listOfNums::remove);
         System.out.println(listOfNums);
     }
+    //4. exercise
+    public static void addIfOdd(List<Integer> integers){
+        List<Integer> listOfNums = new ArrayList<>();
+
+        integers.stream().filter(i -> i % 2 == 0).forEach(listOfNums::add);
+        System.out.println(listOfNums);
+    }
     public static void main(String[] args) {
 
         System.out.println("Lambda function:");
@@ -51,8 +58,10 @@ public class Collections {
         System.out.println("Add integer to list:");
         addIfNotExists(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ), 9);
 
-
         System.out.println("Clear if it is odd:");
         clearIfOdd(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ));
+
+        System.out.println("Add if it is odd:");
+        addIfOdd(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ));
     }
 }
