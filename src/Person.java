@@ -24,11 +24,9 @@ public class Person {
     public static int getBudget(ArrayList<Person> person) {
         ArrayList<Integer> budget = new ArrayList<>();
 
-        int sum = 0;
-        for (int i = 0; i < person.size(); i++) {
-            budget.add(person.get(i).budget);
-            sum += budget.get(i);
-        }
+        person.forEach(i-> budget.add(i.budget));
+        Integer sum = budget.stream().reduce(0, Integer::sum);
+
         return sum;
     }
 
