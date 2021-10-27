@@ -20,7 +20,7 @@ public class Person {
                 ", budget=" + budget +
                 '}';
     }
-
+    //6th exercise in collectins
     public static int getBudget(ArrayList<Person> person) {
         ArrayList<Integer> budget = new ArrayList<>();
 
@@ -30,6 +30,7 @@ public class Person {
         return sum;
     }
 
+    //7th exercise in collectins
     public static boolean sortNamesByLetterA(ArrayList<Person> person) {
         ArrayList<Person> budget01 = new ArrayList<>();
 

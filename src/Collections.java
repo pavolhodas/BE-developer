@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Collections {
     //1. exercise
@@ -56,6 +54,15 @@ public class Collections {
         integers.stream().map(i-> i* integers.size()).forEach(listOfNums::add);
         System.out.println(listOfNums);
     }
+
+    //8th exercise
+    public static void firstTimeHashSet(Set<Integer> integerSet){
+        Set<Integer> integerSetForAdding = new HashSet<>();
+
+        integerSet.forEach(integerSetForAdding::add);
+        System.out.println(integerSetForAdding);
+    }
+
     public static void main(String[] args) {
 
         System.out.println("Lambda function:");
@@ -75,5 +82,15 @@ public class Collections {
 
         System.out.println("Multiply by length:");
         multiplyByLength(Arrays.asList(1, 1, 1, 2, 2, 3, 4, 5 ));
+
+        System.out.println("Using hashset list:");
+        Set<Integer> integerSet = new HashSet<>();
+        integerSet.add(5);                              //Rozdiely: elementy su cislovane od 1, v Liste od 0
+        integerSet.add(3);                              //          nemozeme pridat dvakrat ten isty element
+        integerSet.add(4);                              //          elementy sa vypisuju porade(abecedne, alebo od najmensieho po najvacsi)
+        integerSet.add(2);
+        integerSet.add(1);
+        integerSet.remove(5);
+        firstTimeHashSet(integerSet);
     }
 }
