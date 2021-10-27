@@ -24,10 +24,18 @@ public class Person {
     public static int getBudget(ArrayList<Person> person) {
         ArrayList<Integer> budget = new ArrayList<>();
 
-        person.forEach(i-> budget.add(i.budget));
+        person.forEach(i -> budget.add(i.budget));
         Integer sum = budget.stream().reduce(0, Integer::sum);
 
         return sum;
+    }
+
+    public static boolean sortNamesByLetterA(ArrayList<Person> person) {
+        ArrayList<Person> budget01 = new ArrayList<>();
+
+        person.stream().filter(x -> x.name.contains("a")).forEach(budget01::add);
+
+        return !budget01.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -38,5 +46,6 @@ public class Person {
         person.add(new Person("Martin", 16, 2700));
 
         System.out.println(getBudget(person));
+        System.out.println(sortNamesByLetterA(person));
     }
 }
