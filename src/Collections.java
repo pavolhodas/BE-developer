@@ -63,6 +63,18 @@ public class Collections {
         System.out.println(integerSetForAdding);
     }
 
+    //9th exercise
+    public static void firstTimeHashMap(Map<String, Integer> item01){
+
+        item01.put("Red", 1);
+        item01.put("Green", 2);
+        item01.put("Black", 3);
+        item01.put("White", 4);
+        System.out.println(item01);
+    }
+
+
+
     public static void main(String[] args) {
 
         System.out.println("Lambda function:");
@@ -92,5 +104,9 @@ public class Collections {
         integerSet.add(1);
         integerSet.remove(5);
         firstTimeHashSet(integerSet);
+
+        System.out.println("Using HashMap:");
+        Map<String, Integer> item01 = new HashMap<>();
+        firstTimeHashMap(item01);
     }
 }
