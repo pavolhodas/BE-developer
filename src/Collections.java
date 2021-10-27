@@ -73,6 +73,17 @@ public class Collections {
         System.out.println(item01);
     }
 
+    //10th exercise
+    Map<String, Integer> alreadyPutedItems = new HashMap<>();
+
+    public void putElement(String key, int value){
+        Map<String, Integer> newItem = new HashMap<>();
+
+        alreadyPutedItems.forEach(newItem::put);
+        alreadyPutedItems.keySet().stream().filter(i -> !key.matches(i)).forEach(i -> newItem.put(key, value));
+
+        System.out.println(newItem);
+    }
 
 
     public static void main(String[] args) {
@@ -108,5 +119,11 @@ public class Collections {
         System.out.println("Using HashMap:");
         Map<String, Integer> item01 = new HashMap<>();
         firstTimeHashMap(item01);
+
+        Collections collections = new Collections();
+        System.out.println("Putting elements to HashMap:");
+        collections.alreadyPutedItems.put("Adam", 4);
+        collections.alreadyPutedItems.put("Fero", 5);
+        collections.putElement("roman", 6);
     }
 }
